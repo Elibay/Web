@@ -182,9 +182,13 @@ header.fixed #logo {
   float: left;
 }
 
-#main h2 {font-size: 3em}
+
+#main h2 {font-size: 2em}
 #main span {color: #a0a0a0}
 
+.spanchik{
+  margin-top: 20em;
+}
 /* Блок с преимуществами */
 
 #table {
