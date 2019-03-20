@@ -11,3 +11,18 @@
     background-color: #666;
     color: white;
   }
+
+  #kino {
+    float: left;
+    background-image: url(https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/5b22798088251b8e7083e67a/1528985990502/?format=2500w);
+
+    background-blend-mode: multiply;
+    background-color: #403f40;
+    background-size: cover;
+    background-attachment: fixed;
+
+    padding: 100px 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+  }
