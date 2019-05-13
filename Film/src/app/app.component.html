@@ -1,72 +1,72 @@
 <app-layout>
-        <div style="padding-top: 80px;">
-            <div class="jumbotron">
-                <form id="cinema-form" method="post" class="cinema-form-index" action="http://kino.kz/schedule">
-                    <ul>
-                        <li>
-                            <span class="block-title in-cinema">Смотрите в кинотеатрах</span>
-                        </li>
-                        <li>
-                            <select name="city-select" id="city-select-index" title="Выберите город">
-                                <option value="1">Астана</option>
-                                <option value="2" selected="selected">Алматы</option>
-                                <option value="3">Актау</option>
-                                <option value="4">Актобе</option>
-                                <option value="21">Аксай</option>
-                                <option value="31">Аксу</option>
-                                <option value="5">Атырау</option>
-                                <option value="6">Балхаш</option>
-                                <option value="23">Жанаозен</option>
-                                <option value="7">Караганда</option>
-                                <option value="20">Кокшетау</option>
-                                <option value="8">Костанай</option>
-                                <option value="9">Кызылорда</option>
-                                <option value="33">Мерке</option>
-                                <option value="28">Рудный</option>
-                                <option value="10">Павлодар</option>
-                                <option value="11">Петропавловск</option>
-                                <option value="12">Семей</option>
-                                <option value="30">Степногорск</option>
-                                <option value="13">Талдыкорган</option>
-                                <option value="14">Тараз</option>
-                                <option value="15">Темиртау</option>
-                                <option value="16">Уральск</option>
-                                <option value="17">Усть-Каменогорск</option>
-                                <option value="29">Шу</option>
-                                <option value="18">Шымкент</option>
-                                <option value="22">Щучинск</option>
-                                <option value="19">Экибастуз</option>
-                            </select>
-                        </li>
-                        <li>
-                            <select name="cinema-select" id="cinema-select" class="cinema-select-index" title="Выберите кинотеатр">
-                                <option>Выберите кинотеатр</option>
-                                <option value="82">Bekmambetov Cinema  (Globus)</option>
-                                <option value="91">Chaplin ADK 3D</option>
-                                <option value="122">Chaplin MEGA Park</option>
-                                <option value="75">Cinema Towers 3D</option>
-                                <option value="119">Cinemax (Dostyk Plaza) Dolby Atmos 3D</option>
-                                <option value="149">Kinopark 8 Moskva</option>
-                                <option value="99">Kinopark 11 (Есентай) IMAX</option>
-                                <option value="72">Kinopark 6 (Спутник)</option>
-                                <option value="11">Kinoplexx Sary Arka</option>
-                                <option value="140">Lumiera Cinema (ЦУМ)</option>
-                                <option value="133">Nomad Cinema</option>
-                                <option value="31">Silk Way Cinema</option>
-                                <option value="81">StarCinema (Молл АПОРТ)</option>
-                                <option value="14">Арман 3D (пр. Достык)</option>
-                                <option value="103">Арман 3D (ТРЦ МART)</option>
-                                <option value="59">Иллюзион (Maxima) 3D</option>
-                                <option value="139">Киноцентр Арман (ТРЦ Asia Park)</option>
-                                <option value="142">ТТИ «Алатау» 3D</option>
-                                <option value="26">Цезарь</option>
-                            </select>
-                        </li>
-                    </ul>
-                </form>
-                <form id="city-form" method="post" action="cinema/rules_astarsenal.asp" style="display: none;">
-                    <input type="hidden" name="city-select" id="city-hidden" />
-                </form>
+    <div style="padding-top: 80px;">
+        <div class="jumbotron">
+            <form id="cinema-form" method="post" class="cinema-form-index" action="http://kino.kz/schedule">
+                <ul>
+                    <li>
+                        <span class="block-title in-cinema">Смотрите в кинотеатрах</span>
+                    </li>
+                    <li>
+                        <select name="city-select" id="city-select-index" title="Выберите город">
+                            <option value="1">Астана</option>
+                            <option value="2" selected="selected">Алматы</option>
+                            <option value="3">Актау</option>
+                            <option value="4">Актобе</option>
+                            <option value="21">Аксай</option>
+                            <option value="31">Аксу</option>
+                            <option value="5">Атырау</option>
+                            <option value="6">Балхаш</option>
+                            <option value="23">Жанаозен</option>
+                            <option value="7">Караганда</option>
+                            <option value="20">Кокшетау</option>
+                            <option value="8">Костанай</option>
+                            <option value="9">Кызылорда</option>
+                            <option value="33">Мерке</option>
+                            <option value="28">Рудный</option>
+                            <option value="10">Павлодар</option>
+                            <option value="11">Петропавловск</option>
+                            <option value="12">Семей</option>
+                            <option value="30">Степногорск</option>
+                            <option value="13">Талдыкорган</option>
+                            <option value="14">Тараз</option>
+                            <option value="15">Темиртау</option>
+                            <option value="16">Уральск</option>
+                            <option value="17">Усть-Каменогорск</option>
+                            <option value="29">Шу</option>
+                            <option value="18">Шымкент</option>
+                            <option value="22">Щучинск</option>
+                            <option value="19">Экибастуз</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select name="cinema-select" id="cinema-select" class="cinema-select-index" title="Выберите кинотеатр">
+                            <option>Выберите кинотеатр</option>
+                            <option value="82">Bekmambetov Cinema  (Globus)</option>
+                            <option value="91">Chaplin ADK 3D</option>
+                            <option value="122">Chaplin MEGA Park</option>
+                            <option value="75">Cinema Towers 3D</option>
+                            <option value="119">Cinemax (Dostyk Plaza) Dolby Atmos 3D</option>
+                            <option value="149">Kinopark 8 Moskva</option>
+                            <option value="99">Kinopark 11 (Есентай) IMAX</option>
+                            <option value="72">Kinopark 6 (Спутник)</option>
+                            <option value="11">Kinoplexx Sary Arka</option>
+                            <option value="140">Lumiera Cinema (ЦУМ)</option>
+                            <option value="133">Nomad Cinema</option>
+                            <option value="31">Silk Way Cinema</option>
+                            <option value="81">StarCinema (Молл АПОРТ)</option>
+                            <option value="14">Арман 3D (пр. Достык)</option>
+                            <option value="103">Арман 3D (ТРЦ МART)</option>
+                            <option value="59">Иллюзион (Maxima) 3D</option>
+                            <option value="139">Киноцентр Арман (ТРЦ Asia Park)</option>
+                            <option value="142">ТТИ «Алатау» 3D</option>
+                            <option value="26">Цезарь</option>
+                        </select>
+                    </li>
+                </ul>
+            </form>
+            <form id="city-form" method="post" action="cinema/rules_astarsenal.asp" style="display: none;">
+                <input type="hidden" name="city-select" id="city-hidden" />
+            </form>
 
         
                 <div class="content-loading">
