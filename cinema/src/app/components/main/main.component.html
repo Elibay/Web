@@ -1,0 +1,34 @@
+<div class="film-archive-list">
+    <ul *ngFor="let movie of movies">
+        <li>
+            <div class="item">
+                <div class="film-poster" style="width: 320px">
+                    <a href="#">
+                        <img src="#" width="320" height="222" border=0>
+                    </a>
+                </div>
+                <div class="film-description" style="width: 514px">
+                    <dl>
+                        <dt>
+                            <span>
+                                C 
+                                <span>{{movie.premiere}}</span>
+                            </span>
+                        </dt>
+                        <dt>
+                            <a href="#">{{movie.title}}</a>
+                        </dt>
+                        <dt>триллер, драмма, фантастика</dt>
+                        <dt>
+                            <span>
+                                {{movie.desc}}
+                            </span>
+                        </dt>
+                    </dl>
+                    <div class="prime-age">Возрастной рейтинг: с {{movie.age}} лет</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</div>
