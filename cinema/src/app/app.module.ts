@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
-import { TodayComponent } from './today/today.component';
-import { SoonComponent } from './soon/soon.component';
-import { ScheduleComponent } from './schedule/schedule.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { TodayComponent } from './components/today/today.component';
+import { SoonComponent } from './components/soon/soon.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
+import { CinemaComponent } from './components/cinema/cinema.component';
+import { MovieComponent } from './components/movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ScheduleComponent } from './schedule/schedule.component';
     HeaderComponent,
     TodayComponent,
     SoonComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    CinemaComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
