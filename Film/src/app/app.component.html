@@ -1,5 +1,5 @@
 <app-layout>
-    <div style="padding-top: 80px;">
+    <div style="padding-top: 80px;" >
         <div class="jumbotron">
             <form id="cinema-form" method="post" class="cinema-form-index" action="http://kino.kz/schedule">
                 <ul>
@@ -67,36 +67,80 @@
             <form id="city-form" method="post" action="cinema/rules_astarsenal.asp" style="display: none;">
                 <input type="hidden" name="city-select" id="city-hidden" />
             </form>
-
-        
-                <div class="content-loading">
-                    <div class="premiere-date-select-block">
-                        <div class="content-control">
-                            <div class="premiere-weekdate">
-                                19.03.2019, вторник
-                            </div>
-                            <div id="myDIV">
-                                    <button class="btn active">Сегодня</button>
-                                    <button class="btn">Завтра</button>
-                                    <button class="btn">Послезавтра</button>
-                                </div>
+            <div class="content-loading">
+                <div class="premiere-date-select-block">
+                    <div class="content-control">
+                        <div class="premiere-weekdate">
+                            19.03.2019, вторник
+                        </div>
+                        <div id="myDIV">
+                            <button class="btn active">Сегодня</button>
+                            <button class="btn">Завтра</button>
+                            <button class="btn">Послезавтра</button>
                         </div>
                     </div>
                 </div>
-        
             </div>
-            <div class="kino" id = "kino">
+        </div>
+        <div class="kino" id = "kino">
+            <div class="mov_detail">
+                <div class="item">
+                    <div class="movie_description">
+                        <dl>
+                            <dt><span>С <span>07-Mar-2019</span></span></dt>
+                            <dt><a href="movie/7910">Капитан Марвел</a></dt>
+                            <dt>фантастика, боевик, приключения</dt>
+                            <dt><span>После столкновения с враждующими инопланетными расами пилот военно-воздушных сил Кэрол Дэнверс обретает суперсилу и становится неуязвимой. Героине предстоит совладать со своими новыми способностями, чтобы противостоять могущественному врагу.</span></dt>
+                        </dl>
+                        
+                        <div class="prim_age">Возрастной рейтинг: с 16 лет</div>
+                        <div class="timetable_sch" id="timetable_sch_7910"><a href="javascript:void(0);" onclick="showSchedule(7910, 0);" class="arr_select" title="Подобрать кинотеатр и время">Подобрать кинотеатр и время</a></div>
+                    </div>
+                    <a href="cinema/rules_astarsenal.asp#" onclick="toggleMovieDetails(6); return false;"><div class="icon"></div></a>
+                    <div class="clearfix"></div>
+
+                    <div style="display: none" id="detail_7910">
+                    <br><br/>
+                    <div>
+                        <div class="slider_text_index">
+                            Администрация кинотеатров может изменить время начала киносеанса, цены на билеты и скидки.<br/>
+                            Пожалуйста, уточняйте информацию по телефону.
+                        </div>
+                        <hr class="gray90" />
+
+                        <table class="schedule" cellspacing="0" cellpadding="5" border="0" width="880" id="seances_7910">
+                            <thead>
+                            <tr align="left">
+                                <th width="270">Кинотеатр</th>
+                                <th width="80" class="time">Время</th>
+                                <th width="90">Формат</th>
+                                <th width="70">Язык</th>
+                                <th width="70">Взрослый</th>
+                                <th width="70">Детский</th>
+                                <th width="70">Студент.</th>
+                                <th width="70">VIP</th>
+                                <th width="90"></th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+        </div>
+        <div class="kino" id = "drakon">
                 <div class="mov_detail">
                     <div class="item">
                         <div class="movie_description">
                             <dl>
-                                <dt><span>С <span>07-Mar-2019</span></span></dt>
-                                <dt><a href="movie/7910">Капитан Марвел</a></dt>
-                                <dt>фантастика, боевик, приключения</dt>
-                                <dt><span>После столкновения с враждующими инопланетными расами пилот военно-воздушных сил Кэрол Дэнверс обретает суперсилу и становится неуязвимой. Героине предстоит совладать со своими новыми способностями, чтобы противостоять могущественному врагу.</span></dt>
+                                <dt><span>С <span>21-Feb-2019</span></span></dt>
+                                <dt><a href="movie/7910">Как приручить дракона 3</a></dt>
+                                <dt>мультфильм, фэнтези, боевик, комедия, приключения, семейный</dt>
+                                <dt><span>Когда-то викинги жили в гармонии с драконами. В те времена они делили радость, горе... и последние штаны. Казалось, что так будет всегда, но появление загадочной Дневной Фурии изменило жизнь острова...</span></dt>
                             </dl>
                             
-                            <div class="prim_age">Возрастной рейтинг: с 16 лет</div>
+                            <div class="prim_age">Возрастной рейтинг: с 6 лет</div>
                             <div class="timetable_sch" id="timetable_sch_7910"><a href="javascript:void(0);" onclick="showSchedule(7910, 0);" class="arr_select" title="Подобрать кинотеатр и время">Подобрать кинотеатр и время</a></div>
                         </div>
                         <a href="cinema/rules_astarsenal.asp#" onclick="toggleMovieDetails(6); return false;"><div class="icon"></div></a>
@@ -131,149 +175,99 @@
                 </div>
             </div>
                     
-            </div>
-            <div class="kino" id = "drakon">
-                    <div class="mov_detail">
-                        <div class="item">
-                            <div class="movie_description">
-                                <dl>
-                                    <dt><span>С <span>21-Feb-2019</span></span></dt>
-                                    <dt><a href="movie/7910">Как приручить дракона 3</a></dt>
-                                    <dt>мультфильм, фэнтези, боевик, комедия, приключения, семейный</dt>
-                                    <dt><span>Когда-то викинги жили в гармонии с драконами. В те времена они делили радость, горе... и последние штаны. Казалось, что так будет всегда, но появление загадочной Дневной Фурии изменило жизнь острова...</span></dt>
-                                </dl>
-                                
-                                <div class="prim_age">Возрастной рейтинг: с 6 лет</div>
-                                <div class="timetable_sch" id="timetable_sch_7910"><a href="javascript:void(0);" onclick="showSchedule(7910, 0);" class="arr_select" title="Подобрать кинотеатр и время">Подобрать кинотеатр и время</a></div>
-                            </div>
-                            <a href="cinema/rules_astarsenal.asp#" onclick="toggleMovieDetails(6); return false;"><div class="icon"></div></a>
-                            <div class="clearfix"></div>
-    
-                            <div style="display: none" id="detail_7910">
-                            <br><br/>
-                            <div>
-                                <div class="slider_text_index">
-                                    Администрация кинотеатров может изменить время начала киносеанса, цены на билеты и скидки.<br/>
-                                    Пожалуйста, уточняйте информацию по телефону.
-                                </div>
-                                <hr class="gray90" />
-    
-                                <table class="schedule" cellspacing="0" cellpadding="5" border="0" width="880" id="seances_7910">
-                                    <thead>
-                                    <tr align="left">
-                                        <th width="270">Кинотеатр</th>
-                                        <th width="80" class="time">Время</th>
-                                        <th width="90">Формат</th>
-                                        <th width="70">Язык</th>
-                                        <th width="70">Взрослый</th>
-                                        <th width="70">Детский</th>
-                                        <th width="70">Студент.</th>
-                                        <th width="70">VIP</th>
-                                        <th width="90"></th>
-                                    </tr>
-                                    </thead>
-                                </table>
-                            </div>
+        </div>
+        <div class="kino" id= "kino">
+            <div class="mov_detail">
+                <div class="item">
+                    <div class="movie_description">
+                        <dl>
+                            <dt><span>С <span>07-Mar-2019</span></span></dt>
+                            <dt><a href="movie/7910">Капитан Марвел</a></dt>
+                            <dt>фантастика, боевик, приключения</dt>
+                            <dt><span>После столкновения с враждующими инопланетными расами пилот военно-воздушных сил Кэрол Дэнверс обретает суперсилу и становится неуязвимой. Героине предстоит совладать со своими новыми способностями, чтобы противостоять могущественному врагу.</span></dt>
+                        </dl>
+                        
+                        <div class="prim_age">Возрастной рейтинг: с 16 лет</div>
+                        <div class="timetable_sch" id="timetable_sch_7910"><a href="javascript:void(0);" onclick="showSchedule(7910, 0);" class="arr_select" title="Подобрать кинотеатр и время">Подобрать кинотеатр и время</a></div>
+                    </div>
+                    <a href="cinema/rules_astarsenal.asp#" onclick="toggleMovieDetails(6); return false;"><div class="icon"></div></a>
+                    <div class="clearfix"></div>
+
+                    <div style="display: none" id="detail_7910">
+                    <br><br/>
+                    <div>
+                        <div class="slider_text_index">
+                            Администрация кинотеатров может изменить время начала киносеанса, цены на билеты и скидки.<br/>
+                            Пожалуйста, уточняйте информацию по телефону.
                         </div>
+                        <hr class="gray90" />
+
+                        <table class="schedule" cellspacing="0" cellpadding="5" border="0" width="880" id="seances_7910">
+                            <thead>
+                            <tr align="left">
+                                <th width="270">Кинотеатр</th>
+                                <th width="80" class="time">Время</th>
+                                <th width="90">Формат</th>
+                                <th width="70">Язык</th>
+                                <th width="70">Взрослый</th>
+                                <th width="70">Детский</th>
+                                <th width="70">Студент.</th>
+                                <th width="70">VIP</th>
+                                <th width="90"></th>
+                            </tr>
+                            </thead>
+                        </table>
                     </div>
                 </div>
-                        
-            </div>
-            <div class="kino" id= "kino">
-                    <div class="mov_detail">
-                        <div class="item">
-                            
-                            <div class="movie_description">
-                                <dl>
-                                    <dt><span>С <span>07-Mar-2019</span></span></dt>
-                                    <dt><a href="movie/7910">Капитан Марвел</a></dt>
-                                    <dt>фантастика, боевик, приключения</dt>
-                                    <dt><span>После столкновения с враждующими инопланетными расами пилот военно-воздушных сил Кэрол Дэнверс обретает суперсилу и становится неуязвимой. Героине предстоит совладать со своими новыми способностями, чтобы противостоять могущественному врагу.</span></dt>
-                                </dl>
-                                
-                                <div class="prim_age">Возрастной рейтинг: с 16 лет</div>
-                                <div class="timetable_sch" id="timetable_sch_7910"><a href="javascript:void(0);" onclick="showSchedule(7910, 0);" class="arr_select" title="Подобрать кинотеатр и время">Подобрать кинотеатр и время</a></div>
-                            </div>
-                            <a href="cinema/rules_astarsenal.asp#" onclick="toggleMovieDetails(6); return false;"><div class="icon"></div></a>
-                            <div class="clearfix"></div>
-    
-                            <div style="display: none" id="detail_7910">
-                            <br><br/>
-                            <div>
-                                <div class="slider_text_index">
-                                    Администрация кинотеатров может изменить время начала киносеанса, цены на билеты и скидки.<br/>
-                                    Пожалуйста, уточняйте информацию по телефону.
-                                </div>
-                                <hr class="gray90" />
-    
-                                <table class="schedule" cellspacing="0" cellpadding="5" border="0" width="880" id="seances_7910">
-                                    <thead>
-                                    <tr align="left">
-                                        <th width="270">Кинотеатр</th>
-                                        <th width="80" class="time">Время</th>
-                                        <th width="90">Формат</th>
-                                        <th width="70">Язык</th>
-                                        <th width="70">Взрослый</th>
-                                        <th width="70">Детский</th>
-                                        <th width="70">Студент.</th>
-                                        <th width="70">VIP</th>
-                                        <th width="90"></th>
-                                    </tr>
-                                    </thead>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                        
-            </div>
-            <div class="kino" id = "drakon">
-                    <div class="mov_detail">
-                        <div class="item">
-                            <div class="movie_description">
-                                <dl>
-                                    <dt><span>С <span>21-Feb-2019</span></span></dt>
-                                    <dt><a href="movie/7910">Как приручить дракона 3</a></dt>
-                                    <dt>мультфильм, фэнтези, боевик, комедия, приключения, семейный</dt>
-                                    <dt><span>Когда-то викинги жили в гармонии с драконами. В те времена они делили радость, горе... и последние штаны. Казалось, что так будет всегда, но появление загадочной Дневной Фурии изменило жизнь острова...</span></dt>
-                                </dl>
-                                
-                                <div class="prim_age">Возрастной рейтинг: с 6 лет</div>
-                                <div class="timetable_sch" id="timetable_sch_7910"><a href="javascript:void(0);" onclick="showSchedule(7910, 0);" class="arr_select" title="Подобрать кинотеатр и время">Подобрать кинотеатр и время</a></div>
-                            </div>
-                            <a href="cinema/rules_astarsenal.asp#" onclick="toggleMovieDetails(6); return false;"><div class="icon"></div></a>
-                            <div class="clearfix"></div>
-    
-                            <div style="display: none" id="detail_7910">
-                            <br><br/>
-                            <div>
-                                <div class="slider_text_index">
-                                    Администрация кинотеатров может изменить время начала киносеанса, цены на билеты и скидки.<br/>
-                                    Пожалуйста, уточняйте информацию по телефону.
-                                </div>
-                                <hr class="gray90" />
-    
-                                <table class="schedule" cellspacing="0" cellpadding="5" border="0" width="880" id="seances_7910">
-                                    <thead>
-                                    <tr align="left">
-                                        <th width="270">Кинотеатр</th>
-                                        <th width="80" class="time">Время</th>
-                                        <th width="90">Формат</th>
-                                        <th width="70">Язык</th>
-                                        <th width="70">Взрослый</th>
-                                        <th width="70">Детский</th>
-                                        <th width="70">Студент.</th>
-                                        <th width="70">VIP</th>
-                                        <th width="90"></th>
-                                    </tr>
-                                    </thead>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                        
             </div>
         </div>
-      </app-layout>
-<app-layout>
+                    
+        </div>
+        <div class="kino" id = "drakon">
+            <div class="mov_detail">
+                <div class="item">
+                    <div class="movie_description">
+                        <dl>
+                            <dt><span>С <span>21-Feb-2019</span></span></dt>
+                            <dt><a href="movie/7910">Как приручить дракона 3</a></dt>
+                            <dt>мультфильм, фэнтези, боевик, комедия, приключения, семейный</dt>
+                            <dt><span>Когда-то викинги жили в гармонии с драконами. В те времена они делили радость, горе... и последние штаны. Казалось, что так будет всегда, но появление загадочной Дневной Фурии изменило жизнь острова...</span></dt>
+                        </dl>
+                        
+                        <div class="prim_age">Возрастной рейтинг: с 6 лет</div>
+                        <div class="timetable_sch" id="timetable_sch_7910"><a href="javascript:void(0);" onclick="showSchedule(7910, 0);" class="arr_select" title="Подобрать кинотеатр и время">Подобрать кинотеатр и время</a></div>
+                    </div>
+                    <a href="cinema/rules_astarsenal.asp#" onclick="toggleMovieDetails(6); return false;"><div class="icon"></div></a>
+                    <div class="clearfix"></div>
+
+                    <div style="display: none" id="detail_7910">
+                        <br><br/>
+                        <div>
+                            <div class="slider_text_index">
+                                Администрация кинотеатров может изменить время начала киносеанса, цены на билеты и скидки.<br/>
+                                Пожалуйста, уточняйте информацию по телефону.
+                            </div>
+                            <hr class="gray90" />
+
+                            <table class="schedule" cellspacing="0" cellpadding="5" border="0" width="880" id="seances_7910">
+                                <thead>
+                                <tr align="left">
+                                    <th width="270">Кинотеатр</th>
+                                    <th width="80" class="time">Время</th>
+                                    <th width="90">Формат</th>
+                                    <th width="70">Язык</th>
+                                    <th width="70">Взрослый</th>
+                                    <th width="70">Детский</th>
+                                    <th width="70">Студент.</th>
+                                    <th width="70">VIP</th>
+                                    <th width="90"></th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-layout>
