@@ -1,0 +1,58 @@
+from django.db import models
+
+
+class Movie(models.Model):
+    class Meta:
+        verbose_name = 'Фильм'
+        verbose_name_plural = 'Фильмы'
+    title = models.CharField(max_length=200, blank=False, null=True)
+    poster = models.ImageField()
+    country = models.CharField(max_length=200, blank=True)
+    premiere = models.DateField(blank=False, null=True)
+    duration = models.PositiveIntegerField(blank=False, null=True)
+    age = models.PositiveIntegerField(default=18)
+    desc = models.TextField(blank=False, null=True)
+
+    def __str__(self):
+        return 'Title: {}\n'.format(self.title)
+
+
+class Comment(models.Model):
+    class Meta:
+        verbose_name = 'Коммент'
+        verbose_name_plural = 'Комменты'
+    movie = models.ForeignKey(Movie, related_name='comments', on_delete=models.CASCADE)
+    full_name = models.CharField(max_length=200, blank=False, null=True)
+    comment = models.TextField(max_length=200, blank=False, null=True)
+    datetime = models.DateTimeField(blank=False, null=True)
+
+    def __str__(self):
+        return '{}\n'.format(self.full_name)
+
+
+class Cinema(models.Model):
+    class Meta:
+        verbose_name = 'Кинотеатр'
+        verbose_name_plural = 'Кинотеатры'
+    title = models.CharField(max_length=200, blank=False, null=True)
+    poster = models.ImageField()
+    address = models.CharField(max_length=200, blank=False, null=True)
+    phone = models.CharField(max_length=200, blank=False, null=True)
+    desc = models.TextField(blank=False, null=True)
+
+    def __str__(self):
+        return '{}'.format(self.title)
+
+
+class Schedule(models.Model):
+    class Meta:
+        verbose_name = 'Список'
+        verbose_name_plural = 'Списки'
+    movie = models.ForeignKey(Movie, related_name='schedule', on_delete=models.DO_NOTHING)
+    fixture = models.DateTimeField()
+    adult_price = models.PositiveIntegerField(blank=False, null=True)
+    child_price = models.PositiveIntegerField(blank=True, null=True)
+    student_price = models.PositiveIntegerField(blank=False, null=True)
+
+    def __str__(self):
+        return '{}'.format(self.movie)
