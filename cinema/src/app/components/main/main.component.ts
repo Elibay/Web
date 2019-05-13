@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Statics} from '../../static/Statics';
 
 @Component({
   selector: 'app-main',
@@ -10,6 +11,9 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    Statics.onInit();
+    const index = document.getElementById('index');
+    index.classList.add('active');
   }
 
 }
