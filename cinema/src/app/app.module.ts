@@ -10,6 +10,7 @@ import { SoonComponent } from './components/soon/soon.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { CinemaComponent } from './components/cinema/cinema.component';
 import { MovieComponent } from './components/movie/movie.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MovieComponent } from './components/movie/movie.component';
     SoonComponent,
     ScheduleComponent,
     CinemaComponent,
-    MovieComponent
+    MovieComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
