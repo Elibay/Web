@@ -1,5 +1,5 @@
 <div class="film-archive-list">
-    <ul>
+    <ul *ngFor="let movie of movies">
         <li>
             <div class="item">
                 <div class="film-poster" style="width: 320px">
@@ -12,20 +12,20 @@
                         <dt>
                             <span>
                                 C 
-                                <span>09-мая-2019</span>
+                                <span>{{movie.premiere}}</span>
                             </span>
                         </dt>
                         <dt>
-                            <a href="#">Avengers</a>
+                            <a href="#">{{movie.title}}</a>
                         </dt>
                         <dt>триллер, драмма, фантастика</dt>
                         <dt>
                             <span>
-                                Индия. Мумбаи. Роскошный отель «Тадж-Махал Палас» — гарантия безопасности. И каждый гость здесь — бог. Но однажды мир красоты, роскоши и комфорта рушится… Три дня противостояния смерти, три дня борьбы за выживание…
+                                {{movie.desc}}
                             </span>
                         </dt>
                     </dl>
-                    <div class="prime-age">Возрастной рейтинг: с 18 лет</div>
+                    <div class="prime-age">Возрастной рейтинг: с {{movie.age}} лет</div>
                 </div>
             </div>
         </li>
