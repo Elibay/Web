@@ -10,7 +10,7 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private provider: MovieService) { }
 
   public movies:Array<Movie> = []
 
@@ -19,45 +19,52 @@ export class MainComponent implements OnInit {
     const index = document.getElementById('index');
     index.classList.add('active');
     
-    let avenger:Movie = {
-      id: 1,
-      title: "Мстители",
-      country: "США",
-      poster: "",
-      genre: "triller",
-      premiere:  "13123",
-      duration: "1212",
-      age: 18,
-      description: "asdk;AVJBSERHV[S EOIRPAIEORGNHAIOUERHV;sdvhapufbvaerhgfjpa ergviuaergvoyewugf",
-      comments: [
-        {
-          author: "dasd",
-          text: "asdasdsa",
-          date: "asdasd"
-        }
-      ]
-    }
 
-    let hulk:Movie = {
-      id: 1,
-      title: "Hulk",
-      country: "aafad",
-      poster: "",
-      genre: "triller",
-      premiere:  "13123",
-      duration: "1212",
-      age: 18,
-      description: "asdk;AVJBSERHV[S EOIRPAIEORGNHAIOUERHV;sdvhapufbvaerhgfjpa ergviuaergvoyewugf",
-      comments: [
-        {
-          author: "dasd",
-          text: "asdasdsa",
-          date: "asdasd"
-        }
-      ]
-    }
-    this.movies.push(avenger)
-    this.movies.push(hulk)
+    this.getMovies()
+    // let avenger:Movie = {
+    //   id: 1,
+    //   title: "Мстители",
+    //   country: "США",
+    //   poster: "",
+    //   genre: "triller",
+    //   premiere:  "13123",
+    //   duration: "1212",
+    //   age: 18,
+    //   description: "asdk;AVJBSERHV[S EOIRPAIEORGNHAIOUERHV;sdvhapufbvaerhgfjpa ergviuaergvoyewugf",
+    //   comments: [
+    //     {
+    //       author: "dasd",
+    //       text: "asdasdsa",
+    //       date: "asdasd"
+    //     }
+    //   ]
+    // }
+
+    // let hulk:Movie = {
+    //   id: 1,
+    //   title: "Hulk",
+    //   country: "aafad",
+    //   poster: "",
+    //   genre: "triller",
+    //   premiere:  "13123",
+    //   duration: "1212",
+    //   age: 18,
+    //   description: "asdk;AVJBSERHV[S EOIRPAIEORGNHAIOUERHV;sdvhapufbvaerhgfjpa ergviuaergvoyewugf",
+    //   comments: [
+    //     {
+    //       author: "dasd",
+    //       text: "asdasdsa",
+    //       date: "asdasd"
+    //     }
+    //   ]
+    // }
+    // this.movies.push(avenger)
+    // this.movies.push(hulk)
   }
 
+  getMovies() {
+    this.provider.getMovie().then(res => {
+      this.movies = res;
+    });
+  }
 }

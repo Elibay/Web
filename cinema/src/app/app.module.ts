@@ -11,6 +11,7 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { CinemaComponent } from './components/cinema/cinema.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { MainComponent } from './components/main/main.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MainComponent } from './components/main/main.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

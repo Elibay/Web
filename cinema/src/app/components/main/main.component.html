@@ -4,7 +4,7 @@
             <div class="item">
                 <div class="film-poster" style="width: 320px">
                     <a href="#">
-                        <img src="#" width="320" height="222" border=0>
+                        <img src="{{movie.poster}}" width="320" height="222" border=0>
                     </a>
                 </div>
                 <div class="film-description" style="width: 514px">
@@ -18,10 +18,10 @@
                         <dt>
                             <a href="#">{{movie.title}}</a>
                         </dt>
-                        <dt>триллер, драмма, фантастика</dt>
+                        <dt>{{movie.genre}}</dt>
                         <dt>
                             <span>
-                                {{movie.desc}}
+                                {{movie.description}}
                             </span>
                         </dt>
                     </dl>

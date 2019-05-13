@@ -3,11 +3,12 @@ body {
 }
 ul {
     list-style: none;
-    display: flex;
     align-items: center;
 }
 li {
     text-align: -webkit-match-parent;
+    
+    list-style-type: none;
 }
 .film-description a {
     color: #000;
@@ -32,7 +33,7 @@ li {
     color: #999999;
 }
 .film-archive-list {
-    display: flex;
+    /* display: flex; */
     vertical-align: middle;
     justify-content: center;
 }
@@ -43,7 +44,7 @@ li {
 }
 
 .item {
-    display: inline-block;
+    /* display: table-cell; */
     vertical-align: middle;
     position: relative;
     margin: 0 auto;
