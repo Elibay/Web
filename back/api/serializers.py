@@ -1,27 +1,26 @@
 from rest_framework import serializers
-from .models import *
+from .models import Cinema, Comment, Movie, Schedule
 
 
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
-        fields = '__all__'
+        fields = ('title', 'poster', 'country', 'premiere', 'duration', 'age', 'desc')
 
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = '__all__'
+        fields = ('movie', 'authon', 'text', 'date')
 
 
 class CinemaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cinema
-        fields = '__all__'
+        fields = ('title', 'poster', 'address', 'phone', 'description')
 
 
 class ScheduleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Schedule
-        fields = '__all__'
-
+        fields = ('movie', 'fixture', 'adult_price', 'child_price', 'student_price')
