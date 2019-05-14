@@ -1,7 +1,6 @@
 .topnav {
     background-color: #FFF;
-    overflow: hidden;
-    display: inline-block;
+    overflow: auto;
   }
   .nav-cont {
       display: inline-block;
@@ -27,6 +26,11 @@
   .topnav a.active {
     background-color: #FFF;
     color: #ff6600;
+  }
+  .auth {
+    vertical-align: middle;
+    float: right;
+    margin-top: 10px;
   }
 
   
