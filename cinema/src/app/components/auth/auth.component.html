@@ -1,12 +1,12 @@
 <div id="container">       
   <form>
     <label for="username">Username:</label>
-    <input type="text" [(ngModel)]="username"/>
+    <input type="text" [(ngModel)]="user" [ngModelOptions]="{standalone: true}"/>
     <label for="password">Password:</label>
-    <input type="password" [(ngModel)]="password"/>
+    <input type="password" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}"/>
     <div id="lower">
-      <button (onclick)="login()">Login</button>
-      <button (onclick)="register()">Register</button>
+      <button (click)="login()" href="">Login</button>
+      <button (click)="register()">Register</button>
     </div>
    </form>
   </div>
