@@ -3,6 +3,12 @@ from rest_framework import serializers
 from .models import Cinema, Comment, Movie, Schedule
 
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'email',)
+
+
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
@@ -11,6 +17,8 @@ class MovieSerializer(serializers.ModelSerializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    created_by = UserSerializer(read_only=True)
+
     class Meta:
         model = Comment
         # fields = ('movie', 'author', 'text', 'date')
@@ -30,10 +38,4 @@ class ScheduleSerializer(serializers.ModelSerializer):
         # fields = ('movie', 'fixture', 'adult_price', 'child_price', 'student_price')
         fields = '__all__'
 
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        # fields = ('id', 'username', 'email',)
-        fields = '__all__'
 

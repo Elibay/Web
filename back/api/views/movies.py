@@ -1,21 +1,52 @@
+import datetime
 import random
 
 import requests
 from bs4 import BeautifulSoup
-from rest_framework import generics
+
+from rest_framework import generics, status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.views import APIView
 
-from api.serializers import MovieSerializer, Movie
+from api.serializers import MovieSerializer, CommentSerializer
+from api.models import Movie, Comment
 
 
 class MovieList(generics.ListAPIView):
     serializer_class = MovieSerializer
 
     def get_queryset(self):
-        return Movie.objects.all()
+        if self.request.data['soon'] == 'False':
+            return Movie.objects.filter(premiere__lt=datetime.date.today())
+        else:
+            return Movie.objects.filter(premiere__gte=datetime.date.today())
 
 
+
+@api_view(['Get'])
+def movie_detail(request, pk):
+    try:
+        serializer = MovieSerializer(Movie.objects.get(id=pk), many=False)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
+
+
+class CommentList(APIView):
+
+    def get(self, request, pk):
+        comments = Comment.objects.filter(movie_id=pk)
+        serializer = CommentSerializer(comments, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request, pk):
+        try:
+            serializer = CommentSerializer(data=request.data)
+            serializer.save(created_by=self.request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except Exception as e:
+            return Response({'errors': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 '''
@@ -24,8 +55,6 @@ def delete_everything(Data):
 
 
 def scrape_current_movies(url, cnt, data):
-    delete_everything(data)
-    # url = 'http://kino.kz'
     request = requests.get(url)
     html_doc = request.text
     soup = BeautifulSoup(html_doc, "html.parser")
@@ -42,7 +71,13 @@ def scrape_current_movies(url, cnt, data):
     cnt2 = cnt
     for item in movie_descriptions:
         # premiere_date = item.find_all('span')[0].text[2:]
-        premiere = item.find('span').text[2:]
+        premiere = item.find('span').text
+        premiere = premiere.split('-')
+        if premiere[0][0] == 'С':
+            premiere[0] = premiere[0][2:]
+        prem = premiere[2] + ' ' + premiere[1] + ' ' + premiere[0]
+        prem = datetime.datetime.strptime(prem, '%Y %b %d')
+
         title = item.find_all('dt')[1].text
         genre = item.find_all('dt')[2].text
         description = item.find_all('dt')[3].text
@@ -56,13 +91,14 @@ def scrape_current_movies(url, cnt, data):
         # print(age)
 
         if data.objects.filter(title=title).exists() == False:
-            movie = data.objects.create(id=cnt, premiere=premiere, title=title, genre=genre,
+            movie = data.objects.create(id=cnt, premiere=prem, title=title, genre=genre,
                                         description=description, age=age, duration=duration, poster=images[cnt - cnt2])
             cnt += 1
 
 
 @api_view(['GET'])
 def current_movies(request):
+    delete_everything(Movie)
     scrape_current_movies('http://kino.kz', 0, Movie)
     cnt = Movie.objects.count()
     scrape_current_movies('http://kino.kz/soon', cnt, Movie)
@@ -70,5 +106,4 @@ def current_movies(request):
         movies = Movie.objects.all()
         serializer = MovieSerializer(movies, many=True)
         return Response(serializer.data)
-
 '''

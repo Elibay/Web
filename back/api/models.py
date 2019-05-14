@@ -1,3 +1,6 @@
+import datetime
+
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -9,8 +12,8 @@ class Movie(models.Model):
     poster = models.CharField(max_length=200, blank=True, null=True)
     genre = models.CharField(max_length=200, blank=True, null=True)
     country = models.CharField(max_length=200, blank=True)
-    premiere = models.CharField(max_length=200, blank=True)
-    # premiere = models.DateField(blank=True)
+    # premiere = models.CharField(max_length=200, blank=True)
+    premiere = models.DateField(blank=True)
     duration = models.PositiveIntegerField(blank=False, null=True)
     age = models.PositiveIntegerField(default=18)
     description = models.TextField(blank=False, null=True)
@@ -23,8 +26,8 @@ class Comment(models.Model):
     class Meta:
         verbose_name = 'Коммент'
         verbose_name_plural = 'Комменты'
-    movie = models.ForeignKey(Movie, related_name='comments', on_delete=models.CASCADE)
-    author = models.CharField(max_length=200, blank=False, null=True)
+    movie = models.ForeignKey(Movie, related_name='comments', on_delete=models.DO_NOTHING)
+    created_by = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     text = models.TextField(max_length=200, blank=False, null=True)
     date = models.DateTimeField(blank=False, null=True)
 
@@ -50,8 +53,9 @@ class Schedule(models.Model):
     class Meta:
         verbose_name = 'Список'
         verbose_name_plural = 'Списки'
-    movie = models.ForeignKey(Movie, related_name='schedule', on_delete=models.DO_NOTHING)
-    fixture = models.DateTimeField()
+    movie = models.ForeignKey(Movie, on_delete=models.DO_NOTHING)
+    cinema = models.ForeignKey(Cinema, on_delete=models.DO_NOTHING)
+    fixture = models.DateTimeField(auto_now_add=True, blank=True)
     adult_price = models.PositiveIntegerField(blank=False, null=True)
     child_price = models.PositiveIntegerField(blank=True, null=True)
     student_price = models.PositiveIntegerField(blank=False, null=True)
