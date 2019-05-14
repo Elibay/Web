@@ -5,6 +5,7 @@ import {CinemaComponent} from './components/cinema/cinema.component';
 import {TodayComponent} from './components/today/today.component';
 import {SoonComponent} from './components/soon/soon.component';
 import {ScheduleComponent} from './components/schedule/schedule.component';
+import { AuthComponent } from './components/auth/auth.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'soon', component: SoonComponent, data: {name: 'Скоро'}},
   {path: 'schedule', component: ScheduleComponent, data: {name: 'Расписание'}},
   {path: 'cinema', component: CinemaComponent, data: {name: 'Cinema'}},
+  {path: 'login', component : AuthComponent, data: {name: 'Войти'}},
 ];
 
 @NgModule({

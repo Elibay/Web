@@ -1,6 +1,6 @@
 .site-footer
 {
-  background-color:#FFF;
+  background-color:#eceeef;
   padding:45px 0 20px;
   font-size:15px;
   line-height:18px;
@@ -9,6 +9,7 @@
   bottom: 0;
   right: 0;
   left: 0;
+  text-align: center;
 }
 .site-footer hr
 {
@@ -149,14 +150,7 @@
 {
   background-color:#00aced
 }
-.social-icons a.linkedin:hover
-{
-  background-color:#007bb6
-}
-.social-icons a.dribbble:hover
-{
-  background-color:#ea4c89
-}
+
 @media (max-width:767px)
 {
   .social-icons li.title
