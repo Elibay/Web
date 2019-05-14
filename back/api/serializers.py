@@ -11,7 +11,7 @@ class MovieSerializer(serializers.ModelSerializer):
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ('movie', 'authon', 'text', 'date')
+        fields = ('movie', 'author', 'text', 'date')
 
 
 class CinemaSerializer(serializers.ModelSerializer):
