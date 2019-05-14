@@ -5,13 +5,13 @@ class Movie(models.Model):
     class Meta:
         verbose_name = 'Фильм'
         verbose_name_plural = 'Фильмы'
-    title = models.CharField(max_length=200, blank=False, null=True)
-    poster = models.ImageField()
-    country = models.CharField(max_length=200, blank=True)
-    premiere = models.DateField(blank=False, null=True)
-    duration = models.PositiveIntegerField(blank=False, null=True)
-    age = models.PositiveIntegerField(default=18)
-    desc = models.TextField(blank=False, null=True)
+    title = models.CharField(verbose_name='Назвние', max_length=200, blank=False, null=True)
+    poster = models.ImageField(verbose_name='Афиша')
+    country = models.CharField(verbose_name='Страна', max_length=200, blank=True)
+    premiere = models.DateField(verbose_name='Премьера', blank=False, null=True)
+    duration = models.PositiveIntegerField(verbose_name='Длительность', blank=False, null=True)
+    age = models.PositiveIntegerField(verbose_name='Возрастной лимит', default=18)
+    desc = models.TextField(verbose_name='Описание', blank=False, null=True)
 
     def __str__(self):
         return 'Title: {}\n'.format(self.title)
