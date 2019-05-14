@@ -9,6 +9,9 @@ export class AuthComponent implements OnInit {
 
   constructor() { }
 
+  username = ""
+  password = ""
+
   ngOnInit() {
   }
 

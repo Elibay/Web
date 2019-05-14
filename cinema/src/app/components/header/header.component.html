@@ -9,8 +9,11 @@
     <a id="schedule" href="schedule/">Расписание</a>
 
   </div>
-  <div class="auth">
+  <div class="auth" *ngIf="!logged">
     <a href="login/">Войти</a>
+  </div>
+  <div class="auth" *ngIf="logged">
+    <a (onclick)="logout()">Выйти</a>
   </div>
   
 </div>
