@@ -1,11 +1,13 @@
 export class Movie {
     id: number;
     title: string;
+    poster: string;
+    genre: string;
     country: string;
     premiere: string;
     duration: string;
     age: number;
-    desc: string;
+    description: string;
     comments: Array<Comment>;
 }
 

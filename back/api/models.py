@@ -22,9 +22,9 @@ class Comment(models.Model):
         verbose_name = 'Коммент'
         verbose_name_plural = 'Комменты'
     movie = models.ForeignKey(Movie, related_name='comments', on_delete=models.CASCADE)
-    full_name = models.CharField(max_length=200, blank=False, null=True)
-    comment = models.TextField(max_length=200, blank=False, null=True)
-    datetime = models.DateTimeField(blank=False, null=True)
+    author = models.CharField(max_length=200, blank=False, null=True)
+    text = models.TextField(max_length=200, blank=False, null=True)
+    date = models.DateTimeField(blank=False, null=True)
 
     def __str__(self):
         return '{}\n'.format(self.full_name)
@@ -35,10 +35,10 @@ class Cinema(models.Model):
         verbose_name = 'Кинотеатр'
         verbose_name_plural = 'Кинотеатры'
     title = models.CharField(max_length=200, blank=False, null=True)
-    poster = models.ImageField()
+    poster = models.CharField(max_length=200, blank=True, null=True)
     address = models.CharField(max_length=200, blank=False, null=True)
     phone = models.CharField(max_length=200, blank=False, null=True)
-    desc = models.TextField(blank=False, null=True)
+    description = models.TextField(blank=False, null=True)
 
     def __str__(self):
         return '{}'.format(self.title)

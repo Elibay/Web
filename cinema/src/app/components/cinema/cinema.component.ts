@@ -10,6 +10,6 @@ export class CinemaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('123');
   }
-
 }
