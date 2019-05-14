@@ -9,10 +9,11 @@ export class AuthComponent implements OnInit {
 
   constructor() { }
 
-  username = ""
-  password = ""
+  public username = '';
+  public password = '';
 
   ngOnInit() {
+    
   }
 
   login() {

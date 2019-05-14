@@ -1,9 +1,9 @@
 <div id="container">       
   <form>
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username" [(ngModel)]="username">
+    <input type="text" [(ngModel)]="username"/>
     <label for="password">Password:</label>
-    <input type="password" id="password" name="password" [(ngModel)]="password">
+    <input type="password" [(ngModel)]="password"/>
     <div id="lower">
       <button (onclick)="login()">Login</button>
       <button (onclick)="register()">Register</button>

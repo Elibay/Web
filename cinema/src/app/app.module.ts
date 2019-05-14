@@ -13,6 +13,7 @@ import { MovieComponent } from './components/movie/movie.component';
 import { MainComponent } from './components/main/main.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AuthComponent } from './components/auth/auth.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,13 @@ import { AuthComponent } from './components/auth/auth.component';
     CinemaComponent,
     MovieComponent,
     MainComponent,
-    AuthComponent
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
