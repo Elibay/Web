@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
 from .models import Cinema, Comment, Movie, Schedule
 
@@ -5,22 +6,34 @@ from .models import Cinema, Comment, Movie, Schedule
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
-        fields = ('title', 'poster', 'country', 'premiere', 'duration', 'age', 'desc')
+        # fields = ('title', 'poster', 'country', 'premiere', 'duration', 'age', 'description')
+        fields = '__all__'
 
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ('movie', 'author', 'text', 'date')
+        # fields = ('movie', 'author', 'text', 'date')
+        fields = '__all__'
 
 
 class CinemaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cinema
-        fields = ('title', 'poster', 'address', 'phone', 'description')
+        # fields = ('title', 'poster', 'address', 'phone', 'description')
+        fields = '__all__'
 
 
 class ScheduleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Schedule
-        fields = ('movie', 'fixture', 'adult_price', 'child_price', 'student_price')
+        # fields = ('movie', 'fixture', 'adult_price', 'child_price', 'student_price')
+        fields = '__all__'
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        # fields = ('id', 'username', 'email',)
+        fields = '__all__'
+
