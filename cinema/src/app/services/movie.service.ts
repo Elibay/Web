@@ -17,4 +17,7 @@ export class MovieService extends Main {
   getMovie(soon: string): Promise<Movie[]> {
     return this.get('http://192.168.1.10:8000/api/', {"soon": soon});
   }
+  getMovieDetail(id: number): Promise<Movie> {
+    return this.get('http://192.168.1.10:8000/api/movie/' + id, {});
+  }  
 }
