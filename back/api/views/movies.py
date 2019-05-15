@@ -25,15 +25,16 @@ class MovieList(generics.ListAPIView):
         else:
             return Movie.objects.filter(premiere__gte=datetime.date.today())
 
-# @api_view(['GET',])
+@api_view(['GET',])
 def movie_detail(request, pk):
     try:
         serializer = MovieSerializer(Movie.objects.get(id=pk), many=False)
-        return JsonResponse(serializer.data)
+        # return JsonResponse(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
         # return JsonResponse(serializer.data, status=status.HTTP_200_OK)
     except Exception as e:
-        return JsonResponse({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
-        # return Response({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
+        # return JsonResponse({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
+        return Response({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
 
 
 class CommentList(APIView):

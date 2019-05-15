@@ -1,5 +1,5 @@
 from django.utils.decorators import method_decorator
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 from rest_framework.decorators import api_view
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
@@ -51,11 +51,17 @@ def get_cinemas(request):
         
 '''
 
-@method_decorator(response_wrapper(), name='dispatch')
-class CinemaList(viewsets.ModelViewSet):
-    queryset = Cinema.objects.all()
-    permission_classes = (AllowAny,)
-    http_method_names = ['get']
+# @method_decorator(response_wrapper(), name='dispatch')
+# class CinemaList(viewsets.ModelViewSet):
+#     queryset = Cinema.objects.all()
+#     permission_classes = (AllowAny,)
+#     http_method_names = ['get']
+#     serializer_class = CinemaSerializer
+
+
+class CinemaList(generics.ListAPIView):
     serializer_class = CinemaSerializer
 
+    def get_queryset(self):
+        return Cinema.objects.all()
 
