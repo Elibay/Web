@@ -11,7 +11,7 @@ export class ScheduleComponent implements OnInit {
 
   constructor() { }
 
-  public seats = [1,2,3,4,5,6,7,8,9,10]
+  public seats = [1,2,3,4,5,6,7,8,9]
   public rows = [0,1,2,3,4,5,6,7]
   public time_selected = false;
   public dates = ["18:40", "19:20"];
