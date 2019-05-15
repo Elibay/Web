@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Main } from './main.service';
 import {Movie} from '../models/models';
-const API_URL = 'http://localhost:8000/api/';
+import { Statics } from '../static/Statics';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,6 @@ export class BackendApiService extends Main {
     super(http);
   }
   getMovies(): Promise<Movie> {
-    return this.get(API_URL + 'movies/', {});
+    return this.get(Statics.API_URL + 'movies/', {});
   }
 }

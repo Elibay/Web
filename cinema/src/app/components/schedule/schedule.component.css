@@ -7,22 +7,52 @@ a {
     font-size: 17px;
 }
 .schedule a.active {
-    background-color:blue;
-    color: black;
+    color: blue;
+}
+.schedule a.reserved {
+    color: red;
 }
 a:hover {
     color: black;
 }
 
 .schedule {
-    display: block;
-    vertical-align: middle;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 10px;
 }
 .main {
-    display: block;
-    vertical-align: middle;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    width: 50%;
 }
+.date_coming {
+    border-radius: 3px;
+    -ms-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-style: solid;
+    border-color: #FF890E;
+    border-width: 1px 1px 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 24px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    margin: 1em 1em 1em 0;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 0 0.5em 1.66%;
+    min-width: 15%;
+    padding: 0 1%;
+}
+
+.date_coming:hover {
+    color: white;
+    background-color: #FF890E;
+}
+
+.date_coming_selected {
+    color: white;
+    background-color: #FF890E;
+} 

@@ -5,13 +5,22 @@
   <div>
     <h3>Kinopark 6</h3>
   </div>
-  <div class="schedule"> 
+
+  <div class="time">
+    <div name='date' class="date_coming" *ngFor="let d of dates" (click)="date_click(d)" id="{{d}}">{{d}}</div>
+  </div>
+
+
+  <div class="schedule" *ngIf="time_selected"> 
     <div class="row" *ngFor="let r of rows">
+      ряд {{r+1}}
       <a *ngFor="let s of seats" (click)="activate(r*10+s)" id="{{r*10+s}}">
-        <i> {{s}} </i>
+        {{s}}
       </a>
     </div>
-    
+    <button (click)="buy()">Купить</button>
   </div>
+
+  
 
 </div>
