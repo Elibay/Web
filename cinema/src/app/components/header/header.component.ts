@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+    console.log('logout');
     this.provider.logout().then(res => {
       this.logged = false;
       localStorage.clear();

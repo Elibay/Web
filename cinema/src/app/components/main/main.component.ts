@@ -63,7 +63,7 @@ export class MainComponent implements OnInit {
   }
 
   getMovies() {
-    this.provider.getMovie().then(res => {
+    this.provider.getMovie("False").then(res => {
       this.movies = res;
     });
   }
