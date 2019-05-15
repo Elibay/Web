@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Statics } from 'src/app/static/Statics';
 
 @Component({
   selector: 'app-cinema',
@@ -10,6 +11,8 @@ export class CinemaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('123');
+    Statics.onInit();
+    const today = document.getElementById('cinema');
+    today.classList.add('active');
   }
 }

@@ -1,7 +1,7 @@
 export class Statics {
   static onInit() {
     const soon = document.getElementById('soon');
-    const today = document.getElementById('today');
+    const today = document.getElementById('cinema');
     const index = document.getElementById('index');
     const schedule = document.getElementById('schedule');
     soon.classList.remove('active');
