@@ -20,6 +20,7 @@ export class Comment {
 
 export class Cinema {
     title: string;
+    poster: string;
     address: string;
     phone: string;
     desciption: string;
