@@ -25,4 +25,7 @@ export class Cinema {
     desciption: string;
 }
 
+export interface IAuthResponse {
+    token: string;
+  }
 

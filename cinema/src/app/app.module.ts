@@ -12,7 +12,10 @@ import { CinemaComponent } from './components/cinema/cinema.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { MainComponent } from './components/main/main.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {AuthInterceptor} from './AuthInterceptor';
 import { AuthComponent } from './components/auth/auth.component';
+import { FormsModule } from '@angular/forms';
+import {ClassProvider} from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -25,14 +28,20 @@ import { AuthComponent } from './components/auth/auth.component';
     CinemaComponent,
     MovieComponent,
     MainComponent,
-    AuthComponent
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule 
   ],
-  providers: [],
+  providers: [
+    <ClassProvider> {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

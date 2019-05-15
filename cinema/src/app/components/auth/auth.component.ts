@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service'
 
 @Component({
   selector: 'app-auth',
@@ -7,13 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  constructor(private provider: AuthService) { }
+
+  public user = '';
+  public pass = '';
 
   ngOnInit() {
+    const token = localStorage.getItem('token');
+    
+
   }
 
   login() {
-
+    if (this.user !== '' && this.pass !== '') {
+      this.provider.auth(this.user, this.pass).then(res => {
+        localStorage.setItem('token', res.token);
+        
+      });
+    }
   }
 
   register() {

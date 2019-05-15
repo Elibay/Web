@@ -4,13 +4,16 @@
   </div>
   <div class="nav-cont">
     <a id="index" class="active" href="">Сегодня в кино</a>
-    <a id="today" href="today/">Сегодня детям</a>
+    <a id="cinema" href="cinema/">Кинотеатры</a>
     <a id="soon" href="soon/">Скоро на экранах</a>
     <a id="schedule" href="schedule/">Расписание</a>
 
   </div>
-  <div class="auth">
+  <div class="auth" *ngIf="!logged">
     <a href="login/">Войти</a>
+  </div>
+  <div class="auth" *ngIf="logged">
+    <a (click)="logout()">Выйти</a>
   </div>
   
 </div>
