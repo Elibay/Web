@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Statics} from '../../static/Statics';
 import { setClassMetadata, element } from '@angular/core/src/render3';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-schedule',
@@ -9,17 +10,22 @@ import { setClassMetadata, element } from '@angular/core/src/render3';
 })
 export class ScheduleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   public seats = [1,2,3,4,5,6,7,8,9]
   public rows = [0,1,2,3,4,5,6,7]
   public time_selected = false;
   public dates = ["18:40", "19:20"];
+  public id = 0
+
   ngOnInit() {
     Statics.onInit();
     const schedule = document.getElementById('schedule');
     schedule.classList.add('active');
 
+    this.route.params.subscribe(params => {
+      this.id = +params['id'];
+    });
   }
 
   activate(id: string) {
