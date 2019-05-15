@@ -19,6 +19,7 @@ export class Comment {
 
 
 export class Cinema {
+    id:string;
     title: string;
     poster: string;
     address: string;

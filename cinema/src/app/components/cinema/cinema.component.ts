@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie, Cinema } from 'src/app/models/models';
 import { Statics } from 'src/app/static/Statics';
+import { CinemaService } from 'src/app/services/cinema.service';
 
 
 @Component({
@@ -10,21 +11,24 @@ import { Statics } from 'src/app/static/Statics';
 })
 export class CinemaComponent implements OnInit {
   
-  constructor() { }
+  constructor(private provider: CinemaService) { }
 
-  cinemas: Array<Cinema> = []
+  public cinemas: Array<Cinema> = []
 
   ngOnInit() {
     Statics.onInit();
     const soon = document.getElementById('cinema');
     soon.classList.add('active');
 
-    const cin:Cinema = {
-      title: "Kinopark",
-      poster: "#",
-      address: "Balkantay",
-      phone: "1231241",
-      desciption: "adasda",
-    }
+    this.getCinemas();
+    
+  }
+
+  getCinemas() {
+    this.provider.getCinemas().then(res => {
+      this.cinemas = res;
+      console.log('123');
+      console.log(this.cinemas);
+    });
   }
 }
