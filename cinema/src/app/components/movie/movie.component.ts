@@ -23,5 +23,9 @@ export class MovieComponent implements OnInit {
       console.log(res);
     });
   }
+  getUrl() {
+    console.log(this.movie.poster);
+    return "url('" + this.movie.poster + "')";
+}
 
 }

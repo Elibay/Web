@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'today', component: TodayComponent, data: {name: 'Сегодня детям'}},
   {path: 'soon', component: SoonComponent, data: {name: 'Скоро'}},
   {path: 'schedule', component: ScheduleComponent, data: {name: 'Расписание'}},
+  {path: 'cinema', component: CinemaComponent, data: {name:'Кинотеатры'}},
   {path: 'movie/:id', component: MovieComponent, data: {name: 'Movie'}},
   {path: 'login', component : AuthComponent, data: {name: 'Войти'}},
 ];

@@ -4,6 +4,7 @@ body {
     padding: 0;
 }
 
+
 .message {
     font-size: 12px;
     text-align: center;
@@ -54,7 +55,8 @@ body {
     width: 100%;
     color: #FEFEFE;
     background-size: cover;
-    background: linear-gradient(135deg,rgba(0, 0, 0, .68),rgba(0, 0, 0, .68)), url("http://s.kino.kz/archive/Destroyer/p1192x597.jpg") no-repeat center;
+    background: linear-gradient(135deg,rgba(0, 0, 0, .68),rgba(0, 0, 0, .68));
+    
 }
 
 .btn.white, .btn.black {
