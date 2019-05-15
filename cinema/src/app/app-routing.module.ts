@@ -6,13 +6,14 @@ import {TodayComponent} from './components/today/today.component';
 import {SoonComponent} from './components/soon/soon.component';
 import {ScheduleComponent} from './components/schedule/schedule.component';
 import { AuthComponent } from './components/auth/auth.component';
+import {MovieComponent} from './components/movie/movie.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent},
   {path: 'today', component: TodayComponent, data: {name: 'Сегодня детям'}},
   {path: 'soon', component: SoonComponent, data: {name: 'Скоро'}},
   {path: 'schedule', component: ScheduleComponent, data: {name: 'Расписание'}},
-  {path: 'cinema', component: CinemaComponent, data: {name: 'Cinema'}},
+  {path: 'movie/:id', component: MovieComponent, data: {name: 'Movie'}},
   {path: 'login', component : AuthComponent, data: {name: 'Войти'}},
 ];
 

@@ -16,6 +16,7 @@ import {AuthInterceptor} from './AuthInterceptor';
 import { AuthComponent } from './components/auth/auth.component';
 import { FormsModule } from '@angular/forms';
 import {ClassProvider} from '@angular/core';
+import { CinemasComponent } from './components/cinemas/cinemas.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {ClassProvider} from '@angular/core';
     MovieComponent,
     MainComponent,
     AuthComponent,
+    CinemasComponent,
   ],
   imports: [
     BrowserModule,
