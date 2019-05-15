@@ -17,11 +17,10 @@ class MovieList(generics.ListAPIView):
     serializer_class = MovieSerializer
 
     def get_queryset(self):
-        if self.request.data['soon'] == 'False':
+        if self.request.GET.get('soon') == 'False':
             return Movie.objects.filter(premiere__lt=datetime.date.today())
         else:
             return Movie.objects.filter(premiere__gte=datetime.date.today())
-
 
 
 @api_view(['Get'])
