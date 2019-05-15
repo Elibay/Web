@@ -1,0 +1,28 @@
+a {
+    color: #ff6600;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 25px ; 
+    text-decoration: none;
+    font-size: 17px;
+}
+.schedule a.active {
+    background-color:blue;
+    color: black;
+}
+a:hover {
+    color: black;
+}
+
+.schedule {
+    display: block;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main {
+    display: block;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
