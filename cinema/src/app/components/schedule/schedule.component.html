@@ -1,26 +1,27 @@
-<div class="main">
-  <div>
-    <h1>Акфамен</h1>
+<div class="main" *ngFor="let schedule of schedules">
+  
+  <div *ngIf="printTitle(schedule.movie.title)">
+    <h1>{{schedule.movie.title}}</h1>
   </div>
-  <div>
-    <h3>Kinopark 6</h3>
-  </div>
-
   <div class="time">
-    <div name='date' class="date_coming" *ngFor="let d of dates" (click)="date_click(d)" id="{{d}}">{{d}}</div>
+    <div name='date' class="date_coming" (click)="date_click(schedule.id)" id="she{{schedule.id}}">{{schedule.fixture}}</div>
   </div>
+</div>
 
-
-  <div class="schedule" *ngIf="time_selected"> 
+<div class="schedule" *ngIf="time_selected"> 
     <div class="row" *ngFor="let r of rows">
       ряд {{r+1}}
-      <a *ngFor="let s of seats" (click)="activate(r*10+s)" id="{{r*10+s}}">
-        {{s}}
-      </a>
+      <div *ngFor="let s of columns" (click)="activate(r*9+s)" id="{{r*9+s}}" class="hall">
+        <a *ngIf="reserved[r*9+s]" class="reserved">
+            {{s}}
+        </a>
+        <a *ngIf="!reserved[r*9+s]" (click)="t_click(r*9+s)">
+            {{s}}
+        </a>
+
+      </div>
+        
+      <hr>  
     </div>
     <button (click)="buy()">Купить</button>
   </div>
-
-  
-
-</div>

@@ -6,11 +6,14 @@ a {
     text-decoration: none;
     font-size: 17px;
 }
+.reserved a {
+    color: green;
+}
 .schedule a.active {
-    color: blue;
+    color: green;
 }
 .schedule a.reserved {
-    color: red;
+    color: blue;
 }
 a:hover {
     color: black;
@@ -18,6 +21,8 @@ a:hover {
 
 .schedule {
     padding: 10px;
+    margin: auto;
+    width: 50%;
 }
 .main {
     margin: auto;
@@ -56,3 +61,7 @@ a:hover {
     color: white;
     background-color: #FF890E;
 } 
+
+.hall {
+    display: inline-block;
+}

@@ -31,3 +31,19 @@ export interface IAuthResponse {
     token: string;
   }
 
+export interface Schedule {
+    id: number;
+    movie: Movie;
+    cinema: Cinema;
+    fixture: string;
+    adult_price: string;
+    child_price: string;
+    student_price: string;
+}
+
+export interface Hall {
+    row: number;
+    column: number;
+    is_reserved: false;
+    schedule: number;
+}
