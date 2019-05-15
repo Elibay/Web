@@ -1,3 +1,17 @@
-<p>
-  schedule works!
-</p>
+<div class="main">
+  <div>
+    <h1>Акфамен</h1>
+  </div>
+  <div>
+    <h3>Kinopark 6</h3>
+  </div>
+  <div class="schedule"> 
+    <div class="row" *ngFor="let r of rows">
+      <a *ngFor="let s of seats" (click)="activate(r*10+s)" id="{{r*10+s}}">
+        <i> {{s}} </i>
+      </a>
+    </div>
+    
+  </div>
+
+</div>
