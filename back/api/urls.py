@@ -13,6 +13,7 @@ urlpatterns = [
     path('movie/<int:pk>/comments', CommentList.as_view()),
 
     path('', include(router.urls)),
+    # path('get/', get_cinemas),
 
     path('login/', login),
     path('logout/', logout),
