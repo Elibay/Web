@@ -16,6 +16,9 @@ urlpatterns = [
     # path('', include(router.urls)),
     # path('get/', get_cinemas),
 
+    path('schedule/', ScheduleList.as_view()),
+    path('hall/', HallList.as_view()),
+
     path('login/', login),
     path('logout/', logout),
 

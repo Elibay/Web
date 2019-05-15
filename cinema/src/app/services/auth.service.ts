@@ -20,7 +20,6 @@ export class AuthService extends Main {
       password: password
     });
   }
-
   logout(): Promise<any> {
     return this.post(Statics.API_URL + 'logout/', {});
   }

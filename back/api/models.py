@@ -51,14 +51,21 @@ class Cinema(models.Model):
 
 class Schedule(models.Model):
     class Meta:
-        verbose_name = 'Список'
-        verbose_name_plural = 'Списки'
+        verbose_name = 'Расписание'
+        verbose_name_plural = 'Расписание'
     movie = models.ForeignKey(Movie, on_delete=models.DO_NOTHING)
     cinema = models.ForeignKey(Cinema, on_delete=models.DO_NOTHING)
-    fixture = models.DateTimeField(auto_now_add=True, blank=True)
+    fixture = models.DateTimeField(blank=False)
     adult_price = models.PositiveIntegerField(blank=False, null=True)
     child_price = models.PositiveIntegerField(blank=True, null=True)
     student_price = models.PositiveIntegerField(blank=False, null=True)
 
     def __str__(self):
         return '{}'.format(self.movie)
+
+
+class Hall(models.Model):
+    row = models.PositiveIntegerField(blank=False)
+    column = models.PositiveIntegerField(blank=False)
+    schedule = models.ForeignKey(Schedule, on_delete=models.DO_NOTHING)
+    is_reserved = models.BooleanField(default=False)
