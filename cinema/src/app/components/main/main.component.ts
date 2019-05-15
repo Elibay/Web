@@ -12,7 +12,7 @@ export class MainComponent implements OnInit {
 
   constructor(private provider: MovieService) { }
 
-  public movies:Array<Movie> = []
+  public movies: Array <Movie> = []
 
   ngOnInit() {
     Statics.onInit();
@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
     index.classList.add('active');
     
 
-    this.getMovies()
+    this.getMovies();
     // let avenger:Movie = {
     //   id: 1,
     //   title: "Мстители",

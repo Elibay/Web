@@ -17,6 +17,8 @@ import { AuthComponent } from './components/auth/auth.component';
 import { FormsModule } from '@angular/forms';
 import {ClassProvider} from '@angular/core';
 import { CinemasComponent } from './components/cinemas/cinemas.component';
+import {AuthService} from './services/auth.service';
+import {MovieService} from './services/movie.service';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { CinemasComponent } from './components/cinemas/cinemas.component';
     FormsModule 
   ],
   providers: [
+    AuthService,
+    MovieService,
     <ClassProvider> {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

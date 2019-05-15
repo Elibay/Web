@@ -1,13 +1,16 @@
 import datetime
-import random
+# import random
 
-import requests
-from bs4 import BeautifulSoup
+# import requests
+# from bs4 import BeautifulSoup
+
+from rest_framework.decorators import api_view
 
 from rest_framework import generics, status
-from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.http import JsonResponse
+
 
 from api.serializers import MovieSerializer, CommentSerializer
 from api.models import Movie, Comment
@@ -22,14 +25,15 @@ class MovieList(generics.ListAPIView):
         else:
             return Movie.objects.filter(premiere__gte=datetime.date.today())
 
-
-@api_view(['Get'])
+# @api_view(['GET',])
 def movie_detail(request, pk):
     try:
         serializer = MovieSerializer(Movie.objects.get(id=pk), many=False)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return JsonResponse(serializer.data)
+        # return JsonResponse(serializer.data, status=status.HTTP_200_OK)
     except Exception as e:
-        return Response({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
+        return JsonResponse({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
+        # return Response({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
 
 
 class CommentList(APIView):
