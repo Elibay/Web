@@ -22,8 +22,9 @@ export class ScheduleService extends Main {
     return this.get(Statics.API_URL + "/hall/", {'id': id});
   }
 
-  putReserved(reserve: Array<Hall>) {
-    return this.put(Statics.API_URL + "/hall/", {reserve});
+  postReserved(reserve: Array<Hall>) {
+    console.log('elibay 4ert')
+    return this.post(Statics.API_URL + "/hall/", { reserve });
   }
   
 }

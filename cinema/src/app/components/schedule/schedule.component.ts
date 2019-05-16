@@ -23,6 +23,7 @@ export class ScheduleComponent implements OnInit {
   public dates:number[] = []
   last = "";
   public hall: Array<Hall> = [];
+  public hallId: number[] = [];
   public toReserv: Array<number> = [];
   ngOnInit() {
     Statics.onInit();
@@ -65,6 +66,7 @@ export class ScheduleComponent implements OnInit {
   }
 
   t_click(id:number) {
+    console.log(id)
     const index: number = this.toReserv.indexOf(id);
     const item = document.getElementById(id.toString());
     console.log(item)
@@ -80,7 +82,26 @@ export class ScheduleComponent implements OnInit {
 
 
   buy(){
-    console.log('buy')
+    console.log('asdasdada')
+    const ans :Array<Hall> = []
+    this.hall.forEach( item => {
+      this.toReserv.forEach( reserv => {
+        console.log(reserv)
+        if (reserv === item.id ) {
+          ans.push(item)
+          console.log(item)
+        }
+      })
+    })
+    this.postHall(ans);
+
+    
+  }
+
+  postHall(halls: Array<Hall>) {
+    this.provider.postReserved(halls).then( res => {
+      window.location.reload();
+    })
   }
 
   getHall(id:number) {
@@ -88,8 +109,9 @@ export class ScheduleComponent implements OnInit {
       this.hall = res;
       this.hall.forEach( element => {
         this.reserved.push(element.is_reserved)
+        this.hallId.push(element.id)
       })
-      console.log(this.reserved)
+      
     })
   }
 
