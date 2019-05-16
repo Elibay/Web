@@ -42,6 +42,7 @@ export interface Schedule {
 }
 
 export interface Hall {
+    id: number;
     row: number;
     column: number;
     is_reserved: false;
