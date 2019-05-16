@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Cinema, Comment, Movie, Schedule
+from .models import Cinema, Comment, Movie, Schedule, Hall
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -33,8 +33,19 @@ class CinemaSerializer(serializers.ModelSerializer):
 
 
 class ScheduleSerializer(serializers.ModelSerializer):
+    movie = MovieSerializer(read_only=True, many=False)
+    # cinema = CinemaSerializer(read_only=True, many=False)
+    fixture = serializers.DateTimeField(format="%Y-%m-%d %H:%M")
+
     class Meta:
         model = Schedule
+        # fields = ('movie', 'fixture', 'adult_price', 'child_price', 'student_price')
+        fields = '__all__'
+
+
+class HallSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Hall
         # fields = ('movie', 'fixture', 'adult_price', 'child_price', 'student_price')
         fields = '__all__'
 

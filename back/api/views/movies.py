@@ -25,6 +25,7 @@ class MovieList(generics.ListAPIView):
         else:
             return Movie.objects.filter(premiere__gte=datetime.date.today())
 
+
 @api_view(['GET',])
 def movie_detail(request, pk):
     try:

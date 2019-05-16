@@ -12,4 +12,7 @@ export class Statics {
   // static API_URL = 'http://172.16.95.190:8000/api';
   // static API_URL = 'http://127.0.0.1:8000/api';
   static API_URL = 'http://172.20.10.9:8000/api';
+
+  // static API_URL = 'http://127.0.0.1:8000/api';
+
 }
