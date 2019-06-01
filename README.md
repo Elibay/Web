@@ -8,5 +8,7 @@
 
 
 Kino.kz на минималках
+
 Backend - Django
+
 Frontend - Angular
