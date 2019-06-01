@@ -5,3 +5,8 @@
 @dsklff Дамир Доскулов
 
 @Elibay Елибай Нуптебек
+
+
+Kino.kz на минималках
+Backend - Django
+Frontend - Angular
